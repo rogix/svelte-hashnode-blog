@@ -11,7 +11,7 @@
 
 <Header />
 
-<main class="max-w-5xl mx-auto px-6">
+<main class="max-w-5xl mx-auto px-6 my-10">
 	<article class="prose dark:prose-invert mx-auto">
 		<h1 class="font-semibold font-sans">{postTitle}</h1>
 		<img src={postCoverImage} alt="Post" class="rounded-2xl w-full h-[400px] object-cover" />

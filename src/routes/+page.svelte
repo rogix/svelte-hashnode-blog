@@ -73,39 +73,46 @@
 
 <Header />
 
-<Hero />
+<!-- <Hero /> -->
 
 <section class="grid justify-center max-w-5xl mx-auto p-6 lg:p-0">
 	{#if firstPost}
-		<a
-			href={`${firstPost.node.slug}`}
-			class="w-full flex flex-col sm:flex-row rounded-2xl bg-zinc-900/30"
-		>
-			<img
-				src={firstPost.node.coverImage?.url}
-				alt="Post"
-				class="rounded-2xl sm:w-[326px] h-[234px] object-cover"
-			/>
-			<div class="p-4 flex flex-col justify-between">
+		<a href={`${firstPost.node.slug}`} class="w-full flex flex-col sm:flex-row rounded-2xl">
+			<div class="px-4 py-24 flex flex-col justify-between items-center">
 				<div>
 					<div class="gap-5">
-						<h2 class="text-white text-3xl sm:line-clamp-3">{firstPost.node.title}</h2>
+						<h2
+							class="text-white text-5xl font-semibold sm:line-clamp-3 text-center uppercase leading-tight"
+						>
+							{firstPost.node.title}
+						</h2>
 					</div>
-					<div class="text-orange-400 text-sm py-2">{formatDate(firstPost.node.publishedAt)}</div>
+					<div class="flex text-sm justify-center py-10">
+						<div class="text-white">
+							<span class="text-orange-400">By </span>{firstPost.node.author?.name}
+						</div>
+						<div class="text-orange-400 text-sm pl-1">
+							{formatDate(firstPost.node.publishedAt)}
+						</div>
+					</div>
 				</div>
-				<div class="text-white pt-4">Read the article</div>
+				<div class="text-white border flex w-24 flex-1 justify-center items-center p-2 rounded-sm">
+					Read
+				</div>
 			</div>
 		</a>
 	{/if}
 
-	<section class="grid grid-cols-1 sm:grid-cols-3 gap-10 my-20">
+	<section class="flex flex-col gap-10 my-20 items-center">
 		{#each allPosts?.slice(1) || [] as { node }}
-			<a href={`${node.slug}`} class="flex flex-col mb-10">
-				<img src={node.coverImage?.url} alt="Post" class="rounded-2xl h-[200px] object-cover" />
-				<div class="text-orange-400 text-sm py-2">{formatDate(node.publishedAt)}</div>
-				<h2 class="text-white text-xl">
+			<a href={`${node.slug}`} class="flex flex-col mb-10 w-2/3">
+				<h2 class="text-white text-3xl uppercase">
 					{node.title}
 				</h2>
+				<div class="text-gray-400">
+					{node.brief}
+				</div>
+				<div class="text-orange-400 text-sm py-2">{formatDate(node.publishedAt)}</div>
 			</a>
 		{/each}
 	</section>

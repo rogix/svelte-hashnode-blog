@@ -77,43 +77,56 @@
 
 <section class="grid justify-center max-w-5xl mx-auto p-6 lg:p-0">
 	{#if firstPost}
-		<a href={`${firstPost.node.slug}`} class="w-full flex flex-col sm:flex-row rounded-2xl">
-			<div class="px-4 py-24 flex flex-col justify-between items-center">
-				<div>
-					<div class="gap-5">
-						<h2
-							class="text-white text-5xl font-semibold sm:line-clamp-3 text-center uppercase leading-tight"
+		<div class="w-full flex flex-col sm:flex-row rounded-2xl">
+			<article class="px-4 py-24 flex flex-col justify-between items-center">
+				<div class="gap-5">
+					<h2 class="text-white text-5xl text-center uppercase leading-tight">
+						<a
+							href={`${firstPost.node.slug}`}
+							class="hover:text-orange-200 transition duration-500 ease-in-out"
 						>
 							{firstPost.node.title}
-						</h2>
+						</a>
+					</h2>
+				</div>
+				<div class="flex text-sm justify-center font-mukta py-10 pb-20">
+					<div class="text-white">
+						<span class="text-orange-400">By </span>{firstPost.node.author?.name}
 					</div>
-					<div class="flex text-sm justify-center py-10">
-						<div class="text-white">
-							<span class="text-orange-400">By </span>{firstPost.node.author?.name}
-						</div>
-						<div class="text-orange-400 text-sm pl-1">
-							{formatDate(firstPost.node.publishedAt)}
-						</div>
+					<div class="text-orange-400 text-sm pl-1">
+						{formatDate(firstPost.node.publishedAt)}
 					</div>
 				</div>
-				<div class="text-white border flex w-24 flex-1 justify-center items-center p-2 rounded-sm">
-					Read
-				</div>
-			</div>
-		</a>
+				<a
+					href={`${firstPost.node.slug}`}
+					class="text-white border flex w-40 flex-1 justify-center items-center p-2 rounded-sm uppercase border-white hover:text-orange-200 hover:border-orange-200 transition duration-300 font-mukta font-thin ease-in-out"
+				>
+					Read post
+				</a>
+			</article>
+		</div>
 	{/if}
 
-	<section class="flex flex-col gap-10 my-20 items-center">
+	<section class="flex flex-col relative my-20 items-center">
 		{#each allPosts?.slice(1) || [] as { node }}
-			<a href={`${node.slug}`} class="flex flex-col mb-10 w-2/3">
-				<h2 class="text-white text-3xl uppercase">
-					{node.title}
-				</h2>
+			<article
+				class="relative pb-28 before:content-[''] w-2/3 before:absolute before:w-px before:bg-white/5 before:h-full before:-left-20 before:top-4"
+			>
+				<div class="w-2 h-2 rounded-full bg-orange-600 absolute -left-[84px] top-4" />
+				<a href={`${node.slug}`} class="flex flex-col mb-1">
+					<h2
+						class="text-white text-3xl uppercase hover:text-orange-200 transition duration-500 ease-in-out"
+					>
+						{node.title}
+					</h2>
+				</a>
 				<div class="text-gray-400">
 					{node.brief}
 				</div>
-				<div class="text-orange-400 text-sm py-2">{formatDate(node.publishedAt)}</div>
-			</a>
+				<div class="text-orange-400 absolute -left-48 top-3 font-mukta font-thin uppercase text-xs">
+					{formatDate(node.publishedAt)}
+				</div>
+			</article>
 		{/each}
 	</section>
 

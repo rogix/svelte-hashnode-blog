@@ -1,15 +1,15 @@
-<header class="sm:px-0 bg-[#313131] h-20 flex items-center">
-	<nav class="flex w-full mx-auto justify-between">
-		<div class="h-20 flex items-center px-20">
-			<span class="absolute w-5 h-5 rounded-full bg-orange-600 left-7" />
-			<a href="/" class="text-center text-white/70 font-mukta text-xs tracking-widest font-light"
+<header class="flex h-20 items-center bg-[#313131] sm:px-0">
+	<nav class="mx-auto flex w-full justify-between">
+		<div class="flex h-20 items-center pl-20 sm:px-20">
+			<span class="absolute left-7 h-5 w-5 rounded-full bg-orange-600" />
+			<a href="/" class="text-center font-mukta text-xs font-light tracking-widest text-white/70"
 				>BLOG HOME</a
 			>
 		</div>
-		<div class="bg-orange-600/90 h-20 flex justify-center items-center">
+		<div class="flex h-20 items-center justify-center sm:bg-orange-600/90">
 			<a
 				href="http://rogix.dev"
-				class="p-3 px-4 mx-20 text-white font-mukta uppercase text-xs tracking-widest bg-orange-700/60"
+				class="mx-6 bg-orange-700/60 p-3 px-4 font-mukta text-xs uppercase tracking-widest text-white sm:mx-20"
 				>Profile page</a
 			>
 		</div>

@@ -75,31 +75,31 @@
 
 <!-- <Hero /> -->
 
-<section class="grid justify-center max-w-5xl mx-auto p-6 lg:p-0">
+<section class="mx-auto grid max-w-5xl items-center justify-center justify-items-center p-6 lg:p-0">
 	{#if firstPost}
-		<div class="w-full flex flex-col sm:flex-row rounded-2xl">
-			<article class="px-4 py-24 flex flex-col justify-between items-center">
+		<div class="flex w-full flex-col rounded-2xl sm:flex-row">
+			<article class="flex flex-col items-center justify-between px-4 py-24">
 				<div class="gap-5">
-					<h2 class="text-white text-5xl text-center uppercase leading-tight">
+					<h2 class="text-center text-5xl uppercase leading-tight text-white">
 						<a
 							href={`${firstPost.node.slug}`}
-							class="hover:text-orange-200 transition duration-500 ease-in-out"
+							class="transition duration-500 ease-in-out hover:text-orange-200"
 						>
 							{firstPost.node.title}
 						</a>
 					</h2>
 				</div>
-				<div class="flex text-sm justify-center font-mukta py-10 pb-20">
+				<div class="flex justify-center py-10 pb-20 font-mukta text-sm">
 					<div class="text-white">
 						<span class="text-orange-400">By </span>{firstPost.node.author?.name}
 					</div>
-					<div class="text-orange-400 text-sm pl-1">
+					<div class="pl-1 text-sm text-orange-400">
 						{formatDate(firstPost.node.publishedAt)}
 					</div>
 				</div>
 				<a
 					href={`${firstPost.node.slug}`}
-					class="text-white border flex w-40 flex-1 justify-center items-center p-2 rounded-sm uppercase border-white hover:text-orange-200 hover:border-orange-200 transition duration-300 font-mukta font-thin ease-in-out"
+					class="flex w-40 flex-1 items-center justify-center rounded-sm border border-white p-2 font-mukta font-thin uppercase text-white transition duration-300 ease-in-out hover:border-orange-200 hover:text-orange-200"
 				>
 					Read post
 				</a>
@@ -107,24 +107,27 @@
 		</div>
 	{/if}
 
-	<section class="flex flex-col relative my-20 items-center">
+	<section class="relative my-20 flex flex-col items-center sm:w-3/4">
 		{#each allPosts?.slice(1) || [] as { node }}
 			<article
-				class="relative pb-28 before:content-[''] w-2/3 before:absolute before:w-px before:bg-white/5 before:h-full before:-left-20 before:top-4"
+				class="relative pb-28 before:absolute before:-left-20 before:top-4 before:h-full before:w-px before:bg-white/5 before:content-[''] sm:w-4/5"
 			>
-				<div class="w-2 h-2 rounded-full bg-orange-600 absolute -left-[84px] top-4" />
-				<a href={`${node.slug}`} class="flex flex-col mb-1">
+				<div class="absolute -left-[84px] top-4 h-2 w-2 rounded-full bg-orange-600" />
+
+				<a href={`${node.slug}`} class="mb-1 flex flex-col">
 					<h2
-						class="text-white text-3xl uppercase hover:text-orange-200 transition duration-500 ease-in-out"
+						class="text-3xl uppercase text-white transition duration-500 ease-in-out hover:text-orange-200"
 					>
 						{node.title}
 					</h2>
 				</a>
+				<div
+					class="-left-48 top-3 font-mukta text-xs font-thin uppercase text-orange-400 lg:absolute"
+				>
+					{formatDate(node.publishedAt)}
+				</div>
 				<div class="text-gray-400">
 					{node.brief}
-				</div>
-				<div class="text-orange-400 absolute -left-48 top-3 font-mukta font-thin uppercase text-xs">
-					{formatDate(node.publishedAt)}
 				</div>
 			</article>
 		{/each}
@@ -132,7 +135,7 @@
 
 	{#if hasMorePosts}
 		<button
-			class="bg-orange-700 rounded-full w-60 m-auto px-6 py-3 text-orange-100 font-bold transition duration-300 ease-in-out transform hover:scale-105 hover:bg-orange-600 hover:shadow-lg"
+			class="m-auto w-60 transform rounded-full bg-orange-700 px-6 py-3 font-bold text-orange-100 transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-600 hover:shadow-lg"
 			on:click={loadMorePosts}
 		>
 			{isLoading ? 'Loading...' : 'Load more'}

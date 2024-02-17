@@ -77,7 +77,7 @@
 		<div class="flex w-full flex-col rounded-2xl sm:flex-row">
 			<article class="flex flex-col items-center justify-between px-4 py-24">
 				<div class="gap-5">
-					<h2 class="text-center text-5xl uppercase leading-tight text-white">
+					<h2 class="text-center text-4xl uppercase leading-tight text-white sm:text-5xl">
 						<a
 							href={`${firstPost.node.slug}`}
 							class="transition duration-500 ease-in-out hover:text-orange-200"

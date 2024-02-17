@@ -39,7 +39,7 @@
 </script>
 
 <section
-	class="m-auto my-32 flex h-52 w-full flex-col items-center justify-center gap-14 rounded-b border-t-2 border-t-orange-400 bg-zinc-900/20 px-6 py-40 shadow-lg sm:w-3/4 sm:px-20"
+	class="m-auto my-32 flex h-52 w-full flex-col items-center justify-center gap-14 rounded-b border-t-2 border-t-orange-400 bg-zinc-900/20 bg-gradient-to-r from-[#292929] to-[#252424] px-6 py-40 shadow-lg sm:w-3/4 sm:px-20"
 >
 	{#if status === 'PENDING'}
 		<p class="text-lg text-white">Please check your email to confirm your subscription</p>

@@ -15,7 +15,7 @@
 				<button
 					class="focused mx-6 bg-orange-700 p-3 px-4 font-mukta text-xs uppercase tracking-widest text-white sm:mx-20 sm:bg-orange-700/60"
 				>
-					Portfolio page
+					Profile page
 				</button>
 			</a>
 		</div>

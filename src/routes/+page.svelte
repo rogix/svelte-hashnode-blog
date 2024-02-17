@@ -1,10 +1,9 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { morePosts } from './loadMorePosts';
 	import { formatDate } from '$lib/utils/formatDate';
 	import Header from '$lib/components/Header.svelte';
-	import Hero from '$lib/components/Hero.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { morePosts } from './loadMorePosts';
-	import { onMount } from 'svelte';
 	import Subscribe from '$lib/components/Subscribe.svelte';
 
 	export let data;
@@ -72,8 +71,6 @@
 </script>
 
 <Header />
-
-<!-- <Hero /> -->
 
 <section class="mx-auto grid max-w-5xl items-center justify-center justify-items-center p-6 lg:p-0">
 	{#if firstPost}

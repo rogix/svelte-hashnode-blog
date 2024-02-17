@@ -86,7 +86,9 @@
 						</a>
 					</h2>
 				</div>
-				<div class="flex justify-center py-10 pb-20 font-mukta text-sm">
+				<div
+					class="flex justify-center py-10 pb-20 font-mukta text-sm font-thin uppercase tracking-wider"
+				>
 					<div class="text-white">
 						<span class="text-orange-400">By </span>{firstPost.node.author?.name}
 					</div>
@@ -94,11 +96,12 @@
 						{formatDate(firstPost.node.publishedAt)}
 					</div>
 				</div>
-				<a
-					href={`${firstPost.node.slug}`}
-					class="flex w-40 flex-1 items-center justify-center rounded-sm border border-white p-2 font-mukta font-thin uppercase text-white transition duration-300 ease-in-out hover:border-orange-200 hover:text-orange-200"
-				>
-					Read post
+				<a href={`${firstPost.node.slug}`} class="flex">
+					<button
+						class="focused flex w-40 flex-1 items-center justify-center rounded-sm border border-white p-2 font-mukta font-thin uppercase text-white transition duration-300 ease-in-out hover:border-orange-200 hover:text-orange-200"
+					>
+						Read post
+					</button>
 				</a>
 			</article>
 		</div>
@@ -119,7 +122,7 @@
 					</h2>
 				</a>
 				<div
-					class="-left-48 top-3 font-mukta text-xs font-thin uppercase text-orange-400 lg:absolute"
+					class="-left-48 top-3 font-mukta text-xs font-thin uppercase tracking-wide text-orange-400 lg:absolute"
 				>
 					{formatDate(node.publishedAt)}
 				</div>
@@ -132,7 +135,7 @@
 
 	{#if hasMorePosts}
 		<button
-			class="m-auto w-60 transform rounded bg-orange-700 px-6 py-3 font-bold text-orange-100 transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-600 hover:shadow-lg"
+			class="focused m-auto w-60 transform rounded bg-orange-700 px-6 py-3 font-bold text-orange-100 transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-600 hover:shadow-lg"
 			on:click={loadMorePosts}
 		>
 			{isLoading ? 'Loading...' : 'Load more'}

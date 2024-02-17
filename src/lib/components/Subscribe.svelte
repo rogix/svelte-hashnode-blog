@@ -53,12 +53,12 @@
 				type="email"
 				name="email"
 				autocomplete="email"
-				class="w-full rounded bg-zinc-900/60 px-4 py-4 text-white focus:border-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-700 sm:w-96"
+				class="focused w-full rounded bg-zinc-900/60 px-4 py-4 text-white sm:w-96"
 				bind:value={email}
 				placeholder="Enter your email"
 			/>
 			<button
-				class="transform rounded bg-orange-700 px-8 py-4 text-sm text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-600 hover:shadow-lg"
+				class="focused transform rounded bg-orange-700 px-8 py-4 text-sm text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-600 hover:shadow-lg"
 				on:click={subscribe}
 				disabled={requestInProgress}
 			>

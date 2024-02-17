@@ -132,7 +132,7 @@
 
 	{#if hasMorePosts}
 		<button
-			class="m-auto w-60 transform rounded-full bg-orange-700 px-6 py-3 font-bold text-orange-100 transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-600 hover:shadow-lg"
+			class="m-auto w-60 transform rounded bg-orange-700 px-6 py-3 font-bold text-orange-100 transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-600 hover:shadow-lg"
 			on:click={loadMorePosts}
 		>
 			{isLoading ? 'Loading...' : 'Load more'}

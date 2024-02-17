@@ -39,25 +39,26 @@
 </script>
 
 <section
-	class="bg-zinc-900/20 px-6 w-full sm:px-20 h-52 py-40 rounded-3xl sm:w-3/4 justify-center items-center flex flex-col gap-14 m-auto my-32 shadow-lg"
+	class="m-auto my-32 flex h-52 w-full flex-col items-center justify-center gap-14 rounded-b border-t-2 border-t-orange-400 bg-zinc-900/20 px-6 py-40 shadow-lg sm:w-3/4 sm:px-20"
 >
 	{#if status === 'PENDING'}
-		<p class="text-white text-lg">Please check your email to confirm your subscription</p>
+		<p class="text-lg text-white">Please check your email to confirm your subscription</p>
 	{:else}
-		<h2 class="text-white text-lg text-center">
-			Subscribe to {publication.title} newsletter to get the latest updates in your inbox
+		<h2 class="text-center text-lg text-white">
+			I believe developers can learn from each other and grow together. Subscribe to my blog and
+			let's connect!
 		</h2>
-		<div class="flex flex-col sm:flex-row md:flex gap-4 w-full">
+		<div class="flex w-full flex-col gap-4 sm:flex-row md:flex">
 			<input
 				type="email"
 				name="email"
 				autocomplete="email"
-				class="bg-zinc-900/60 py-4 px-4 w-full sm:w-96 rounded-2xl text-white"
+				class="w-full rounded bg-zinc-900/60 px-4 py-4 text-white focus:border-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-700 sm:w-96"
 				bind:value={email}
 				placeholder="Enter your email"
 			/>
 			<button
-				class="bg-orange-700 text-white text-sm py-4 px-8 rounded-2xl transition duration-300 ease-in-out transform hover:scale-105 hover:bg-orange-600 hover:shadow-lg"
+				class="transform rounded bg-orange-700 px-8 py-4 text-sm text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-600 hover:shadow-lg"
 				on:click={subscribe}
 				disabled={requestInProgress}
 			>

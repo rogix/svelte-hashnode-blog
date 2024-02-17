@@ -1,6 +1,8 @@
-<footer class="flex items-center bg-zinc-900/20 h-20 mt-32">
-	<p class="container flex justify-center gap-2 tracking-wider mx-auto text-orange-500 text-center">
-		<span> Built with SvelteKit and Hashnode API </span>
+<footer class="mt-32 flex h-20 items-center bg-zinc-900/20">
+	<div
+		class="container mx-auto flex justify-center gap-2 text-center font-mukta font-thin tracking-wider text-orange-500"
+	>
+		<div>Rogix</div>
 		<span> &copy; 2024 </span>
-	</p>
+	</div>
 </footer>

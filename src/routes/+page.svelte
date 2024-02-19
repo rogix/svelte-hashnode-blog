@@ -7,7 +7,7 @@
 	import Subscribe from '$lib/components/Subscribe.svelte';
 
 	export let data;
-	let hasMorePosts: boolean = true;
+	let hasMorePosts: boolean = false;
 
 	let publication = data.props.publication;
 
@@ -45,8 +45,8 @@
 					return;
 				}
 
-				if (!data.pageInfo.hasNextPage) {
-					hasMorePosts = false;
+				if (data.pageInfo.hasNextPage) {
+					hasMorePosts = true;
 				}
 
 				if (!allPosts.some((existingPost) => existingPost.node.id === post.node.id)) {
@@ -67,6 +67,8 @@
 		}
 	}
 
+	console.log(hasMorePosts);
+
 	onMount(loadMorePosts);
 </script>
 
@@ -74,7 +76,7 @@
 
 <section class="mx-auto grid max-w-5xl items-center justify-center justify-items-center p-6 lg:p-0">
 	{#if firstPost}
-		<div class="flex w-full flex-col rounded-2xl sm:flex-row">
+		<div class="flex w-full flex-col justify-center rounded-2xl sm:flex-row">
 			<article class="flex flex-col items-center justify-between px-4 py-24">
 				<div class="gap-5">
 					<h2 class="text-center text-4xl uppercase leading-tight text-white sm:text-5xl">

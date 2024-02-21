@@ -5,18 +5,17 @@
 	export let data;
 
 	let tag = data.props;
-	let publication = data.props.publication;
 	let posts = data.props.posts?.edges;
 </script>
 
 <Header />
 
 <main class="mx-auto my-10 max-w-5xl px-6">
-	<h1 class="font-mukta text-4xl font-normal uppercase tracking-wider text-orange-100">
+	<h1 class="mx-auto font-mukta text-4xl uppercase tracking-wider text-orange-100 sm:w-2/3">
 		<span class="text-orange-400">#</span>{tag?.tag}
 	</h1>
 
-	<section class="relative my-20 flex flex-col items-center sm:w-3/4">
+	<section class="relative mx-auto my-20 flex flex-col items-center sm:w-2/3">
 		{#if posts}
 			{#each posts as { node }}
 				<article class="before:absolutesm:w-4/5 relative pb-28">
@@ -28,7 +27,7 @@
 						</h2>
 					</a>
 					<div
-						class="-left-48 top-3 py-2 font-mukta text-xs font-thin uppercase tracking-wide text-orange-400"
+						class="pb-4 pt-1 font-mukta text-xs font-thin uppercase tracking-wide text-orange-400"
 					>
 						{formatDate(node.publishedAt)}
 					</div>

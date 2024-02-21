@@ -7,6 +7,7 @@
 	const post = data.props?.post.publication?.post?.content.html;
 	const postTitle = data.props?.post.publication?.post?.title;
 	const postCoverImage = data.props?.post.publication?.post?.coverImage?.url;
+	const postTags = data.props?.post.publication?.post?.tags;
 </script>
 
 <Header />
@@ -16,6 +17,15 @@
 		<h1 class="font-sans font-semibold">{postTitle}</h1>
 		<img src={postCoverImage} alt="Post" class="h-[400px] w-full rounded-2xl object-cover" />
 		{@html post}
+		<div class="flex gap-2">
+			{#if postTags}
+				{#each postTags as tag}
+					<a class="no-underline" href={`/tag/${tag.slug}`}
+						><span class="text-orange-500">#</span>{tag.name}</a
+					>
+				{/each}
+			{/if}
+		</div>
 	</article>
 </main>
 

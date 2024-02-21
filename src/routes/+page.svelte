@@ -67,8 +67,6 @@
 		}
 	}
 
-	console.log(hasMorePosts);
-
 	onMount(loadMorePosts);
 </script>
 
